@@ -5,14 +5,11 @@ public class bai6 {
     {
         int c = 0;
         for (int i = 0; i < arr.length; i++) {
-            if (k == arr[i])
-                c++;
-        }
-        if (c == 0) {
-            return -1;
-        } else {
-            return c;
-        }
+            if (k == arr[i]){
+                return i + 1;
+            }else {
+                return -1;
+            }
     }
     public static void main(String[] args) {
         int arr[] = { 0, 1, 3, 5, 7, 9, 11, 12, 14, 16 };
