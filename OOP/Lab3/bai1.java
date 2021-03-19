@@ -1,5 +1,3 @@
-package Lab3;
-
 import java.util.Scanner;
 
 public class bai1 {
@@ -100,14 +98,19 @@ public class bai1 {
         System.out.println(result);
         output(a);
         //..
+        System.out.println("insert");
+        int m = sc.nextInt();
         int k = sc.nextInt();
-        insert(a, n, k);
+        insert(a, m, k);
         output(a);
         //...
-        int[] b = duplicate(a);
+        System.out.println("Duplicate");
+        int[] c = input();
+        int[] b = duplicate(c);
         output1(b);
         //....
-        int[] c = removeDuplicate(a);
-        output1(c);
+        System.out.println("Remove Duplicate");
+        int[] d = removeDuplicate(c);
+        output1(d);
     }
 }

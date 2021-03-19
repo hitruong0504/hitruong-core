@@ -1,5 +1,3 @@
-package Lab3;
-
 import java.util.Scanner;
 
 
@@ -54,10 +52,10 @@ public class bai2 {
         int[][] b = input();
         int[][] c = sum(a, b);
         output(c);
-        // Scanner scanner = new Scanner(System.in);
-        // System.out.print("Nhap so can nhan voi ma tran: ");
-        // int n = scanner.nextInt();
-        // mul(c, n);
-        // output(a);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhap so can nhan voi ma tran: ");
+        int n = scanner.nextInt();
+        mul(c, n);
+        output(c);
     }
 }

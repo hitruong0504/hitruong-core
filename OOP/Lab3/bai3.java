@@ -1,5 +1,3 @@
-package Lab3;
-
 import java.util.Scanner;
 
 public class bai3 {
@@ -50,6 +48,22 @@ public class bai3 {
         }
         return builder.toString();
     }
+    //....viet thuong phu am co trong chuoi
+    static String upandlow(String s){
+        s = s.toUpperCase();
+        StringBuilder builder = new StringBuilder(s);
+        for (int i = 0; i < builder.length(); i++) {
+            boolean dk = (builder.charAt(i) == 'U' || builder.charAt(i) == 'E' || builder.charAt(i) == 'O' || builder.charAt(i) == 'A' || builder.charAt(i) == 'I');
+            
+            if (dk) {
+                char item = builder.charAt(i);
+                char ITEM = Character.toLowerCase(item);
+
+                builder.setCharAt(i, ITEM);
+            }
+        }
+        return builder.toString();
+    }
     public static void main(String[] args) {
         String fullname = input();
         System.out.print("Ho, ten sau khi tach: ");
@@ -58,6 +72,7 @@ public class bai3 {
         System.out.print("Ten dem: ");
         System.out.print(middlename(fullname));
         System.out.println();
-        System.out.print(capitalizeFullName(fullname));
+        System.out.println(capitalizeFullName(fullname));
+        System.out.println(upandlow(fullname));
     }
 }
