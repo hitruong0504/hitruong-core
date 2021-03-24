@@ -71,3 +71,45 @@ j = (-D)'
 k = (-(D)')
 l = (C^2)'
 m = (C')^2
+%%Ex11
+A = [2 4 1; 6 7 2; 3 5 9];
+%a
+[nRow,nCol] = size(A);
+if nRow == nCol
+    disp("A is matrix square");
+else
+    disp("A is not matrix square");
+end
+%b
+if issymmetric(A) ~= 0
+    disp("A is matrix symmetric");
+else
+    disp("A is not matrix symmetric");
+end
+%c
+if issymmetric(A, 'skew') ~= 0
+    disp("A is matrix skew-symmetric");
+else
+    disp("A is not matrix skew-symmetric");
+end
+%d
+triu(A)
+%e
+tril(A)
+%%Ex12
+A = [6 0 0 5; 1 7 2 -5; 2 0 0 0; 8 3 1 8];
+determinant_a = det(A)
+B = [1 -2 5 2; 0 0 3 0; 2 -6 -7 5; 5 0 4 4];
+determinant_b = det(B)
+C = [3 5 -8 4; 0 -2 3 -7; 0 0 1 5; 0 0 0 2];
+determinant_c = det(C)
+D = [4 0 0 0; 7 -1 0 0; 2 6 3 0; 5 -8 3 0; 5 -8 4 -3];
+%%Ex15
+A = [2 4 5/2; (-3)/4 2 1/4; 1/4 1/2 2];
+B = [1 (-1)/2 3/4; 3/2 1/2 -2; 1/4 1 1/2];
+%a
+a_1 = (A^(-1))*(B^(-1))
+a_2 = (B*A)^(-1)
+%b
+b_1 = (A^(-1))'
+b_2 = (A')^(-1)
