@@ -24,7 +24,7 @@ end
 
 %cau4
 try
-    a.ans4 = a.ans1a(4:4:end) - 3;
+    a.ans4 = a.ans1a(4:4:end) - 3
 catch
     a.ans4 = 0;
 end
