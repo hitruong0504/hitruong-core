@@ -1,132 +1,222 @@
-%%Ex1
-A1 = [1 -7; -2 -3];
-a1 = max(sum(abs(A1)))
-A2 = [-2 8; 3 1];
-a2 = max(sum(abs(A2)))
-A3 = [2 -8; 3 1];
-a3 = norm(A3, 1)
-A4 = [2 3; 1 -1];
-a4 = norm(A4, 1)
-A5 = [5 -4 2; -1 2 3; -2 1 0];
-a5 = norm(A5, 1)
+%% Ex1
+disp('Exercise 1')
+%a
+v1_a = [1 2 3 4]';
+v2_a = [-1 0 1 3]';
+v3_a = [0 5 -6 8]';
+w1 = [3 -6 17 11]';
+
+A = [v1_a v2_a v3_a];
+B = [A w1];
+if rank(A) == rank(B)
+    disp('a: v1, v2, v3, w are linear combination')
+else
+    disp('a: v1, v2, v3, w are not linear combination')
+end
+%b
+v1_b = [1 1 2 2]';
+v2_b = [2 3 5 6]';
+v3_b = [2 -1 3 6]';
+w2 = [0 5 3 0]';
+
+A = [v1_b v2_b v3_b];
+B = [A w2];
+if rank(A) == rank(B)
+    disp('b: v1, v2, v3, w are linear combination')
+else
+    disp('b: v1, v2, v3, w are not linear combination')
+end
+%c
+w3 = [-1 6 1 -4]';
+A = [v1_b v2_b v3_b];
+B = [A w3];
+if rank(A) == rank(B)
+    disp('c: v1, v2, v3, w are linear combination')
+else
+    disp('c: v1, v2, v3, w are not linear combination')
+end
+%d
+v4 = [1 15 -12 8]';
+w4 = [0 -6 17 11]';
+A = [v1_a v2_a v3_a v4];
+B = [A w4];
+if rank(A) == rank(B)
+    disp('a: v1, v2, v3, w are linear combination')
+else
+    disp('a: v1, v2, v3, w are not linear combination')
+end
 %%Ex2
-b1 = max(sum(abs(A1')))
-B2 = [3 6; 1 0];
-b2 = norm(B2, Inf)
-b3 = norm(A5, Inf)
-B4 = [3 6 -1; 3 1 0; 2 4 -7];
-b4 = norm(B4, Inf)
-B5 = [-3 0 0; 0 4 0; 0 0 2];
-b5 = norm(B5, Inf)
+disp('Exercise 2')
+%a
+A = [1 0 1 0; -2 -4 -1 0; 0 1 1 0];
+if rank(A)==size(A,1)
+    disp('a: v1, v2, v3 are the linear independent')
+else
+    disp('a: v1, v2, v3 are the linear dependent')
+end
+%b
+W = [1 0 2; 0 1 4; 2 -2 -4];
+a = [0 0 0]';
+B = [W a];
+if rank(B) == size(B, 1)
+    disp('b: v1, v2, v3 are the linear independent')
+else
+    disp('b: v1, v2, v3 are the linear dependent')
+end
+x = linsolve(W, a)'
+%c
+C = [1 -2 3 4 0; 2 4 5 0 0; -2 0 0 4 0; 3 2 1 -1 0];
+if rank(C) == size(C, 1)
+    disp('c: v1, v2, v3 are the linear independent')
+else
+    disp('c: v1, v2, v3 are the linear dependent')
+end
+%d
+D = [0 0 1 2 3 0; 0 0 2 3 1 0; 1 2 3 4 5 0; 2 1 0 0 0 0; -1 -3 -5 0 0 0];
+if rank(D) == size(D, 1)
+    disp('d: v1, v2, v3 are the linear independent')
+else
+    disp('d: v1, v2, v3 are the linear dependent')
+end
 %%Ex3
-C1 = A5;
-c1 = sqrt(sum(diag(C1'*C1)))
-C2 = [1 7 3; 4 -2 -2; -2 -1 1];
-c2 = norm(C2, 'fro')
-C3 = [2 3; 1 -1];
-c3 = norm(C3, 'fro')
+A2 = [1 0 2 3; 4 -1 0 2; 0 -1 -8 -10];
+%a
+[q, pivot] = rref(A2);
+Col = A2(pivot, :);
+%b
+[p, pivot] = rref(A2');
+Row = A2(:, pivot);
 %%Ex4
-u1 = [1; 1];
-v1 = [0; 1];
-ang1 = acos(sum(u1.*v1)/(sqrt(sum(u1.^2))*sqrt(sum(v1.^2))))
+n = null(A2, 'r');
+v1 = n(:,1)
+v2 = n(:,2)
+%%b
+syms a b;
+if A2*(a*v1 - b*v2) == 0
+    disp('a,b are infinite')
+end
+%Ex5
+%%a
+A = [7 6 -4 1; -5 -1 0 2; 9 -11 7 -3; 19 -9 7 1];
+w = [1 1 -1 -3]';
 
-u2 = [-2; 3];
-v2 = [1/2; -1/2];
-ang2 = acos(sum(u2.*v2)/(sqrt(sum(u2.^2))*sqrt(sum(v2.^2))))
+wA = [A w];
+if (rank(wA) == rank(A))
+    disp('w is column space of A')
+else
+    disp('w is not column space of A')
+end
 
-u3 = [1; 0];
-v3 = [0; 1];
-ang3 = acos(sum(u3.*v3)/(sqrt(sum(u3.^2))*sqrt(sum(v3.^2))))
-%%Ex5
-u5_a = [2 3];
-unit1 = u5_a/norm(u5_a)
+if (A*w == 0)
+    disp('w is nullspace of A')
+else
+    disp('w is not nullspace of A')
+end
 
-u5_b = [1 2 3];
-unit2 = u5_b/norm(u5_b)
+%%b
+A = [-8 5 -2 0; -5 2 1 -2; 10 -8 6 -3; 3 -2 1 0];
+w = [1 2 1 0]';
+wA = [A w];
+if (rank(wA) == rank(A))
+    disp('w is column space of A')
+else
+    disp('w is not column space of A')
+end
 
-u5_c = [1/2 -1/2 1/4]
-unit3 = u5_c/norm(u5_c)
+if (A*w == 0)
+    disp('w is nullspace of A')
+else
+    disp('w is not nullspace of A')
+end
 
-u5_d = [sqrt(2) 2 -sqrt(2) sqrt(2)];
-unit4 = u5_d/norm(u5_d)
 %%Ex6
-v6 = [1 2 3];
-s2 = [7 4 3];
-s3 = [2 1 9];
-% D1 = norm(v6 - s2)
-D1 = sqrt(sum((v6 - s2).^2))
-D2 = norm(v6 - s3)
-D3 = norm(s3 - s2) % = norm(s2 - s3)
+A = [5 1 2 2 0; 3 3 2 -1 -12; 8 4 4 -5 12; 2 1 1 0 -2];
+B = [A(:,1) A(:,2) A(:,4)];
+
+AB1 = [B A(:,3)];
+AB2 = [B A(:,5)];
+
+if (rank(B) == rank(AB1) && rank(B) == rank(AB2))
+    disp('a3 a5 are in the column space of B')
+end
+
 %%Ex7
-A1 = [1 2 3; 2 1 2; 3 2 4];
-E1 = [80 98 99 85 106 94; 71 92 76 95 100 92; 124 163 140 160 176 161];
-D1 = (inv(A1)*E1) - 3;
-LKT = ['A':'Z'];
-LKT = [LKT ' '];
-S0 = LKT(D1(1:numel(D1)));
+S = [1 0 2; 0 1 4; 2 -2 -4]';
+[Q,pivot] = rref(S);
+basis = S(:,pivot)
+
 %%Ex8
-A2 = [3 4 5; 1 3 1; 1 1 2];
-S1 = 'ATTACK';
-D2 = [];
-for i = 1:length(S1)
-   for j = 1:27
-       if LKT(j) == S1(i)
-           D2 = [D2 j];
-           break;
-       end
-   end
-end
-E2 = (reshape(D2, 2, 3) + 9) * A2;
+%%a
+A = hilb(5);
+C = null(A,'r')
+%%b
+A = pascal(5);
+C = null(A,'r')
+%%c
+A = magic(5);
+C = null(A,'r')
 
-S2 = 'LINEAR ALGEBRA LABORATORY';
-D3 = [];
-for i = 1:length(S2)
-   for j = 1:27
-       if LKT(j) == S2(i)
-           D3 = [D3 j];
-           break;
-       end
-   end
-end
-E3 = reshape(D3, 25, 1) * reshape(A2, 1, 9);
 %%Ex9
-Doc1 = [0 4 0 0 0 2 1 3];
-Doc2 = [3 1 4 3 1 2 0 1];
-Doc3 = [3 0 0 0 3 0 3 0];
-Doc4 = [0 1 0 3 0 0 2 0];
-Doc5 = [2 2 2 3 1 4 0 2];
+u1 = [3 1 1]';
+u2 = [-1 2 1]';
+u3 = [-1/2 2 7/2]';
 
-a12 = sum(Doc1.*Doc2)/(sqrt(sum(Doc1.*2))*sqrt(sum(Doc2.*2)))
-a13 = sum(Doc1.*Doc3)/(sqrt(sum(Doc1.*2))*sqrt(sum(Doc3.*2)))
-a14 = sum(Doc1.*Doc4)/(sqrt(sum(Doc1.*2))*sqrt(sum(Doc4.*2)))
-a15 = sum(Doc1.*Doc5)/(sqrt(sum(Doc1.*2))*sqrt(sum(Doc5.*2)))
-a23 = sum(Doc3.*Doc2)/(sqrt(sum(Doc3.*2))*sqrt(sum(Doc2.*2)))
-a24 = sum(Doc4.*Doc2)/(sqrt(sum(Doc4.*2))*sqrt(sum(Doc2.*2)))
-a34 = sum(Doc3.*Doc4)/(sqrt(sum(Doc3.*2))*sqrt(sum(Doc4.*2)))
-a25 = sum(Doc5.*Doc2)/(sqrt(sum(Doc5.*2))*sqrt(sum(Doc2.*2)))
-a35 = sum(Doc3.*Doc5)/(sqrt(sum(Doc5.*2))*sqrt(sum(Doc3.*2)))
-a45 = sum(Doc4.*Doc5)/(sqrt(sum(Doc5.*2))*sqrt(sum(Doc4.*2)))
-
+if (sum(u1.*u2) == 0)
+     disp('u1 u2 is orthogonal set')
+ else
+     disp('u1 u2 is not orthogonal set')
+ end
+ 
+ if (sum(u1.*u3) == 0)
+     disp('u1 u3 is orthogonal set')
+ else
+     disp('u1 u3 is not orthogonal set')
+ end
+ 
+ if (sum(u2.*u3) == 0)
+     disp('u2 u3 is orthogonal set')
+ else
+     disp('u2 u3 is not orthogonal set')
+ end
+ 
+ if sum(u1.*u2) == sum(u1.*u3) && sum(u1.*u2) == sum(u2.*u3) && sum(u1.*u2) == 0
+     disp('u1 u2 u3 is an orthogonal set')
+else
+     disp('u1 u2 u3 is not an orthogonal set')
+end
+    
 %%Ex10
-q = [0 0 0.7 0.5 0 0.3];
-D1 = [1.0 0.5 0.3 0 0 0];
-D2 = [0.5 1 0 0 0 0];
-D3 = [0 1.0 0.8 0.7 0 0];
-D4 = [0 0.9 1.0 0.5 0 0];
-D5 = [0 0 0 1.0 0 1.0];
-D6 = [0 0 0 0 0.7 0];
-D7 = [0.5 0 0.7 0 0 0.9];
-D8 = [0 0.6 0 1.0 0.3 0.2];
+y = [7 6]';
+u = [4 2]';
+proj = (sum(y.*u)/sqrt(sum(u.^2))^2)*u
 
-T = [D1;D2;D3;D4;D5;D6;D7;D8];
-d = [];
-for i = 1:size(T,1)
-    cs = sum(q.*T(i,:))/(sqrt(sum(q.^2))*sqrt(sum(T(i,:).^2)));
-    d = [d cs];
+%%Ex11
+try
+m = randi(10);
+n = randi(10);
+A = randi([1 10],m,n)
+
+if (A' == inv(A))
+    disp('orthonormal')
+else
+    disp('not orthonormal')
+end
+catch
+    disp('not orthonormal')
 end
 
-[m,n] = sort(d);
-m(end:-1:1)
-n(end:-1:1)
-
-disp('D2 is nearest');
+%%Ex12
+A = [-10 13 7 -11; 2 1 5 3; -6 3 13 -3; 16 16 2 5; 2 1 5 7];
+v = [];
+s = 0;
+ for i = 1:4
+     if (i==1)
+         v = [A(:,1)];
+     else
+     for j = 1:(i-1)
+         s = s + (sum(A(:,i).*v(j))/sqrt(sum(v(j).^2))^2)*v(j);
+     end
+     v = [v (A(:,i) - s)];
+     end
+ end
+disp(v)
