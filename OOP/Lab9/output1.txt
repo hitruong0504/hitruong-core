@@ -1,0 +1,2 @@
+ITStudent{ sName='abc', gpa='8.1' sID='123' rank='A'}
+MathStudent{ sName='Truong Anh Hi', gpa='7.5' sID='520h0356' rank='Passed'}
