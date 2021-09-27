@@ -1,32 +1,28 @@
-import java.util.*;
-
 public interface ListInterface<E> {
     
-    //add
-    public void addFirst(E item);
-
-    public void addAfter(Node<E> curr, E item);
-
-    public void addLast(E item);
-
-    //remove
-    public E removeFirst(E item) throws NoSuchElementException;
-
-    public E removeAfter(E item) throws NoSuchElementException;
-
-    public E removeLast(E item) throws NoSuchElementException;
+    void addFirst(E item); 
     
-    //other
-    public void print();
+    void addAfter(Node<E> curr, E item);
 
-    public boolean isEmpty();
+    void addLast(E item);
+
+    E removeFirst();
+
+    E removeAfter(Node<E> curr);
+
+    E removeLast();
+
+    int size();
+
+    boolean contains(E item);
+
+    boolean isEmpty();
+
+    Node<E> getHead();
+
+    E getFirst();
     
-    public E getFirst() throws NoSuchElementException;
+    void print();
 
-    public Node<E> getHead();
-
-    public int size();
-
-    public boolean contains(E item);
-    
+    public E removeCurr(Node<E> curr);
 }
