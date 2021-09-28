@@ -289,8 +289,8 @@ public class MyLinkedList<E> implements ListInterface<E> {
                         current.setData(tmp2);
                     }
                 }
-                current.getNext();
             }
+            current = current.getNext();
         }
     }
 }
