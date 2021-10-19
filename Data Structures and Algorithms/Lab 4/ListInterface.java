@@ -2,13 +2,13 @@ public interface ListInterface<E> {
     
     void addFirst(E item); 
     
-    void addAfter(SNode<E> curr, E item);
+    void addAfter(Node<E> curr, E item);
 
     void addLast(E item);
 
     E removeFirst();
 
-    E removeAfter(SNode<E> curr);
+    E removeAfter(Node<E> curr);
 
     E removeLast();
 
@@ -18,11 +18,11 @@ public interface ListInterface<E> {
 
     boolean isEmpty();
 
-    SNode<E> getHead();
+    Node<E> getHead();
 
     E getFirst();
     
     void print();
 
-    public E removeCurr(SNode<E> curr);
+    public E removeCurr(Node<E> curr);
 }
