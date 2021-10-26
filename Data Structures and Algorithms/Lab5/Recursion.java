@@ -43,10 +43,9 @@ public class Recursion {
     }
     //e
     public int search(int a[], int n, int key){
-        if(a.length < 0) return 0;
-        if(n == 0) return a[0];
-        if(a[n - 1] == key) return n;
-        if(a[n - 1] != key) return -1;
+        if(n == 1 && a[0] != key) return -1;
+        if(n == 1 && a[0] == key) return 0;
+        if(a[n - 1] == key) return n - 1;
         return search(a, n - 1, key);
     }
 
