@@ -32,5 +32,4 @@ create table results(
 	sid varchar(10) foreign key references student(sid),
 	cid varchar(10) foreign key references courses(cid),
 	score float,
-	constraint PK_results primary key(sid, cid)
 )
