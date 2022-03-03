@@ -1,0 +1,10 @@
+
+--2.a
+update student set birthday = '1990-02-20' where sid = 'S01'
+--2.b
+update results set score = score + 1 where sid = 'S02' and cid = 'PM'
+--2.c
+delete from results where score < 5
+
+select * from student
+select * from results

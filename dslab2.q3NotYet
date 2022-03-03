@@ -1,0 +1,19 @@
+--3a
+alter table student add Phone int
+--3b
+alter table student alter column Phone varchar(10)
+--3c
+alter table student add constraint df_Phone default 'None' for Phone
+
+--delete
+--alter table student drop constraint df_Phone
+
+--3d
+alter table results alter column sid varchar(10) not null
+alter table results alter column cid varchar(10) not null
+
+alter table results add constraint PK_results primary key(sid, cid)
+--3e
+
+select * from results
+sp_help results
