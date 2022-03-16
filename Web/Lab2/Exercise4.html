@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body{
+            background-color: #d7d7d9;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            /* dat khung chat ra giua man hinh */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #chat{
+            background-color: white;
+            width: 350px;
+            height: 700px;
+            overflow: auto;
+            padding: 10px;
+            border-radius: 9px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hoder {
+            background-color: #e5e5ea;
+            border-radius: 9px;
+            margin-top: 10px;
+            margin-right: 50%;
+            width: fit-content;
+        }
+
+        .content{
+            padding: 3px;
+            margin: 7px;
+        }
+        
+        
+        .me{
+            color: white;
+            margin-top: 10px;
+            border-radius: 9px;
+            background-color: #01bf41;
+            margin-left: 50%;
+            align-self: flex-end;
+        }
+
+        .hoder:hover{
+            background-color: #c1c1c2;
+        }
+
+        .me:hover{
+            background-color: #029433;
+        }
+    </style>
+</head>
+<body>
+    <div id ="chat">
+        <div class="hoder"> 
+            <div class="content">Hello</div>
+        </div>
+        <div class="hoder">
+            <div class="content">I would like for the div to only expand to as wide as my table becomes.
+            </div>
+        </div>
+        <div class="me">
+            <div class="content">Hello</div>
+        </div>
+        <div class="me">
+            <div class="content">when there are no width specified. I heard they think of adding what you want in CSS3. For now, make do with one of the above.
+            </div>
+        </div>
+        <div class="me">
+            <div class="content">Hello</div>
+        </div>
+        <div class="hoder">
+            <div class="content">lement that has what CSS calls shrink-to-fit width and the spec does not provide a blessed way to get such a thing. In CSS2, shrink-to-fit is not a goal, bu</div>
+        </div>
+        <div class="me">
+            <div class="content">Hello</div>
+        </div>
+        <div class="me">
+            <div class="content">Hello</div>
+        </div>
+        <div class="hoder">
+            <div class="content">Hello</div>
+        </div>
+        <div class="me">
+            <div class="content">Hello</div>
+        </div>
+        <div class="me">
+            <div class="content">Hello</div>
+        </div>
+        <div class="hoder">
+            <div class="content">the effect is called "shrinkwrapping", and as answered there's a couple of ways to do this (float, inline, min/max-width) all of which have side-effects to choose from – annakata Jan 16 '09 at 16:32
+            </div>
+        </div>
+        <div class="me">
+            <div class="content">Hello</div>
+        </div>
+        <div class="me">
+            <div class="content">You want a block element that has what CSS calls shrink-to-fit width and the spec does not provide a blessed way to get such a thing. In CSS2, shrink-to-fit is not a goal, but means to deal with a situation where browser "has to" get a width out of thin air. Those situations are:</div>
+        </div>
+        <div class="me">
+            <div class="content">Hello</div>
+        </div>
+        <div class="hoder">
+            <div class="content">Hello</div>
+        </div>
+    </div>
+</body>
+</html>
