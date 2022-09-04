@@ -1,0 +1,6 @@
+note: file code and .jar put in the same folder
+--Compile
+javac -cp "./lib.jar" <filename>.java
+
+--Run
+java -cp ".;./lib.jar" <filename>
