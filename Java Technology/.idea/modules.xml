@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Java Technology.iml" filepath="$PROJECT_DIR$/.idea/Java Technology.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab1/ex4/filesdownloader/filedownloader.iml" filepath="$PROJECT_DIR$/Lab1/ex4/filesdownloader/filedownloader.iml" />
+    </modules>
+  </component>
+</project>

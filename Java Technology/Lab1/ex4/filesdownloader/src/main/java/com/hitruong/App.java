@@ -28,7 +28,6 @@ public class App
 
         try {
             URL src = new URL(url);
-            // File destination = new File("C:\\Users\\hitru\\github\\hitruong-core\\Java Technology\\Lab1\\ex4\\" + fileName);
             File destination = new File("../" + fileName);
             System.out.println("Downloading...");
             FileUtils.copyURLToFile(src, destination, 2000, 2000);
